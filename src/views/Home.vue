@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Figma :figma="figmaConfig" v-model="viewModel"/>
+    <Figma :figma="figmaJSON" v-model="viewModel"/>
   </div>
 </template>
 
@@ -9,22 +9,30 @@ import Vue from "vue";
 import Figma from 'vue-low-code'
 Vue.use(Figma);
 
+import TodoService from './../services/ToDoService'
 // import JSON file for deployment
-// import app from './app.json'
+import app from './app.json'
 
 export default {
   name: 'Home',
   data: function () {
     return {
-      // figmaJSON: app,
+      figmaJSON: app,
       figmaConfig: {
         figmaFile: '',
         figmaAccessKey: '',
       },
       viewModel: {
-        /**
-         * Add your view model here
-         */
+        searchFilter: '',
+        todos: [],
+        newTodo: {
+          name: "",
+          details: ""
+        },
+        selectedTodo: {
+          name: "",
+          details: ""
+        },
       },
       config: {
         components: {
@@ -38,9 +46,31 @@ export default {
   components: {
   },
   methods: {
-    /**
-     * Place your methods here
-     */
+    onHomeLoad () {
+      console.debug('Home.onHomeLoad()')
+      this.viewModel.todos = TodoService.findAll()
+    },
+    createNewTodo (e) {
+      console.debug('Home.createNewTodo()', e.viewModel.newTodo.name, e.viewModel.newTodo.details)
+      TodoService.create(e.viewModel.newTodo.name, e.viewModel.newTodo.details)
+      e.viewModel.newTodo.name = ''
+      e.viewModel.newTodo.details = ''
+      return 'Home'
+    },
+    updateTodo (e) {
+      console.debug('Home.updateTodo()', e.viewModel.selectedTodo.name, e.viewModel.selectedTodo.id)
+      TodoService.update(e.viewModel.selectedTodo.id, e.viewModel.selectedTodo.name, e.viewModel.selectedTodo.details)
+      return 'Home'
+    },
+    deleteTodo (e) {
+      console.debug('Home.deleteTodo()', e.viewModel.selectedTodo.name, e.viewModel.selectedTodo.id)
+      TodoService.delete(e.viewModel.selectedTodo.id)
+      return 'Home'
+    },
+    filterTodo (e) {
+      console.debug('Home.filterTodo()', e.viewModel.searchFilter)
+      this.viewModel.todos = TodoService.findByFilter(e.viewModel.searchFilter)
+    }
   }
 }
 </script>
