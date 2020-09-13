@@ -5,6 +5,7 @@
 </template>
 
 <script>
+
 import Vue from "vue";
 import Figma from 'vue-low-code'
 Vue.use(Figma);
@@ -74,3 +75,30 @@ export default {
   }
 }
 </script>
+
+<style>
+
+  /**
+   * Make it look like a mobile on desktop
+   */
+  @media only screen and (min-width: 600px) {
+    .home {
+      width: 375px;
+      height: 667px;
+      border-radius: 5px;
+      margin: 150px auto;
+      box-shadow: 0px 0px 20px 0px  rgba(0,0,0, 0.25);
+      position: relative;
+      overflow: auto;
+    }
+
+    .qux-element.qux-container.ButtonNew {
+      position: absolute;
+    }
+
+    body {
+      background: #cecece;
+    }
+  }
+
+</style>

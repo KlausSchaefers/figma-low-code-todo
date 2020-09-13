@@ -1173,7 +1173,7 @@
         "padding": true
       },
       "hover": {
-        "borderColor": "rgba(9, 64, 103, 1)"
+        "borderColor": "rgba(61, 169, 252, 1)"
       },
       "focus": {
         "borderColor": "rgba(61, 169, 252, 1)"
@@ -1270,10 +1270,10 @@
         "padding": true
       },
       "hover": {
-        "borderColor": "rgba(9, 64, 103, 1)"
+        "borderColor": "rgba(61, 169, 252, 1)"
       },
       "focus": {
-        "borderColor": "rgba(9, 64, 103, 1)"
+        "borderColor": "rgba(61, 169, 252, 1)"
       }
     },
     "w10030": {
@@ -1358,8 +1358,8 @@
         "padding": true
       },
       "hover": {
-        "background": "rgba(61, 169, 252, 1)",
-        "borderColor": "rgba(61, 169, 252, 1)",
+        "background": "rgba(9, 64, 103, 1)",
+        "borderColor": "rgba(9, 64, 103, 1)",
         "color": "rgba(255, 255, 255, 1)"
       }
     },
@@ -1402,6 +1402,10 @@
         "border": true,
         "onclick": true,
         "padding": true
+      },
+      "hover": {
+        "background": "rgba(9, 64, 103, 1)",
+        "borderColor": "rgba(9, 64, 103, 1)"
       }
     },
     "w10033": {
@@ -1710,7 +1714,7 @@
         "borderColor": "rgba(61, 169, 252, 1)"
       },
       "focus": {
-        "borderColor": "rgba(9, 64, 103, 1)"
+        "borderColor": "rgba(61, 169, 252, 1)"
       }
     },
     "w10042": {
@@ -1807,7 +1811,7 @@
         "borderColor": "rgba(61, 169, 252, 1)"
       },
       "focus": {
-        "borderColor": "rgba(9, 64, 103, 1)"
+        "borderColor": "rgba(61, 169, 252, 1)"
       }
     },
     "w10044": {
@@ -1931,6 +1935,10 @@
         "border": true,
         "onclick": true,
         "padding": true
+      },
+      "hover": {
+        "background": "rgba(9, 64, 103, 1)",
+        "borderColor": "rgba(9, 64, 103, 1)"
       }
     },
     "w10047": {
