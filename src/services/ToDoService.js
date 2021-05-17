@@ -1,7 +1,12 @@
 class ToDoService {
 
   constructor () {
-    this.todos = []
+    this.todos = [
+      {
+        name: "This is the first todo",
+        details: "You shoudl create more todos, to track your work"
+      }
+    ]
   }
 
   findAll () {
@@ -17,7 +22,6 @@ class ToDoService {
     let result = this.todos.filter(t => {
       return t.name.toLowerCase().indexOf(filter) >= 0
     })
-    console.debug('ee', result)
     return result
   }
 
